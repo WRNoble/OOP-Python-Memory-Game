@@ -2,7 +2,7 @@ class Card:
     def __init__(self, word, location):
         self.card = word
         self.location = location
-        self.match = False
+        self.matched = False
 
     def __eq__(self, other):
         return self.card == other.card
