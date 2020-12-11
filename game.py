@@ -32,7 +32,7 @@ class Game:
                         row.append(str(card))
                     else:
                         row.append('   ')
-            return row
+        return row
 
     def create_grid(self):
         header = ' |  ' + '  |  '.join(self.columns) + '  |'
@@ -48,14 +48,14 @@ class Game:
         for card in self.cards:
             if card.location == loc1 or card.location == loc2:
                 cards.append(card)
-            if cards[0] == cards[1]:
-                cards[0].matched = True
-                cards[1].matched = True
-                return True
-            else:
-                for card in cards:
-                    print(f'{card.location}: {card}')
-                return False
+        if cards[0] == cards[1]:
+            cards[0].matched = True
+            cards[1].matched = True
+            return True
+        else:
+            for card in cards:
+                print(f'{card.location}: {card}')
+            return False
 
     def check_win(self):
         for card in self.cards:
